@@ -27,7 +27,6 @@ export class AuthenticationService extends IonicAuth<IDToken> {
   }
 
   async login(): Promise<void> {
-    debugger
     await this.vaultService.logout();
     // await this.vaultService.setDesiredAuthMode();
 
