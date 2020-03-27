@@ -61,7 +61,7 @@ const AppComponent: React.FC<AppComponentProps> = observer((props) => {
       <IonReactRouter>
         <IonRouterOutlet>
           {/* <Route path="/edit-tea-category/:id" render={() => isLoggedIn ? <EditTeaCategory /> : <Redirect to="/login" />} /> */}
-          <Route path="/" render={() => <Redirect to="/login" />} />
+          <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
           <Route path="/tabs" render={() => isLoggedIn ? <Tabs /> : <Redirect to="/login"/>} />
           <Route path="/login" render={() => isLoggedIn ? <Redirect to="/tabs/home"/> : <Login />} />
         </IonRouterOutlet>
