@@ -14,7 +14,7 @@ import {
   IonList,
   IonItem
 } from '@ionic/react';
-import { lock, logOut } from 'ionicons/icons';
+import { lockClosed, logOut } from 'ionicons/icons';
 import { useVaultService } from '../contexts/Vault';
 import { observer } from 'mobx-react-lite';
 import { AuthMode } from '@ionic-enterprise/identity-vault';
@@ -69,7 +69,7 @@ const Settings: React.FC = observer(() => {
             <IonItem>
               <IonLabel>Lock</IonLabel>
               <IonButton disabled={ vaultService.secureStorageEnabled } onClick={() => vaultService.lockOut()}>
-                <IonIcon icon={lock}></IonIcon>
+                <IonIcon icon={lockClosed}></IonIcon>
               </IonButton>
             </IonItem>
             <IonItem>

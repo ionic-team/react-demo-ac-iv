@@ -1,4 +1,4 @@
-import { BiometricType, IdentityVault, PluginConfiguration, AuthMode } from '@ionic-enterprise/identity-vault';
+import { BiometricType, IdentityVault, PluginConfiguration, AuthMode, SupportedBiometricType } from '@ionic-enterprise/identity-vault';
 
 export class BrowserAuthService implements IdentityVault {
   private storage = window.localStorage;
@@ -7,14 +7,14 @@ export class BrowserAuthService implements IdentityVault {
     authMode: AuthMode.SecureStorage,
     descriptor: {
       username: '',
-      vaultId: ''
+      vaultId: '',
     },
     isBiometricsEnabled: false,
     isPasscodeEnabled: false,
     isPasscodeSetupNeeded: false,
     isSecureStorageModeEnabled: true,
     hideScreenOnBackground: false,
-    lockAfter: 50000
+    lockAfter: 50000,
   };
 
   unsubscribe(): Promise<void> {
@@ -123,4 +123,10 @@ export class BrowserAuthService implements IdentityVault {
     return Promise.resolve();
   }
 
+  isLockedOutOfBiometrics(): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+  getAvailableHardware(): Promise<SupportedBiometricType[]> {
+    return Promise.resolve([]);
+  }
 }

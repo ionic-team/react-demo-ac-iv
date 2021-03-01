@@ -13,7 +13,7 @@ import {
 import { useAuthService } from '../contexts/Auth';
 import { useVaultService } from '../contexts/Vault';
 import { observer } from 'mobx-react-lite';
-import { unlock } from 'ionicons/icons';
+import { lockClosed } from 'ionicons/icons';
 
 import './Login.scss';
 
@@ -85,7 +85,7 @@ const Login: React.FC = observer(() => {
             className="unlock ion-text-center"
             onClick={() => tryAction(vaultService.unlock.bind(vaultService), 'There was an error unlocking the vault')}
            >
-            <IonIcon icon={unlock}></IonIcon>
+            <IonIcon icon={lockClosed}></IonIcon>
             <div>{loginType}</div>
           </div>
         }

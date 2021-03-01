@@ -5,7 +5,7 @@ import environment from '../environment';
 import { VaultService } from './VaultService';
 import { User, IDToken } from '../definitions';
 
-const { nativeAzureConfig, webAzureConfig } = environment;
+const { azureConfig } = environment;
 
 
 export class AuthenticationService extends IonicAuth<IDToken> {
@@ -18,7 +18,7 @@ export class AuthenticationService extends IonicAuth<IDToken> {
   onVaultLockChange: () => void;
 
   constructor(vaultService: VaultService) {
-    const config = window.Capacitor ? nativeAzureConfig : webAzureConfig;
+    const config = azureConfig;
     config.tokenStorageProvider = vaultService;
     super(config);
     this.vaultService = vaultService;

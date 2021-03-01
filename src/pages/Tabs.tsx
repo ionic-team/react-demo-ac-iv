@@ -8,7 +8,7 @@ import {
   IonIcon,
   IonLabel
 } from '@ionic/react';
-import { home, informationCircle, switcher } from 'ionicons/icons';
+import { home, informationCircle, settings } from 'ionicons/icons';
 import Home from './Home';
 import About from './About';
 import Settings from './Settings';
@@ -33,7 +33,7 @@ const Tabs: React.FC = () => (
         <IonLabel>About</IonLabel>
       </IonTabButton>
       <IonTabButton tab="settings" href="/tabs/settings">
-        <IonIcon icon={switcher} />
+        <IonIcon icon={settings} />
         <IonLabel>Settings</IonLabel>
       </IonTabButton>
     </IonTabBar>
